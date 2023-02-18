@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
-  apiUrl = 'https://api.github.com/users';
+  private apiUrl = 'https://api.github.com/users';
+  private apiUsersUrl = 'https://api.github.com';
   searchQuery: string = '';
   constructor(private http: HttpClient) {}
 
@@ -17,10 +19,13 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/${username}`);
   }
 
-  searchUser() {
-    return this.http.get(`${this.apiUrl}?q=${this.searchQuery}`);
+  searchUser(query: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUsersUrl}/search/users?q=${query}`);
   }
 
+  // searchUser(query: string): Observable<any> {
+  //   return this.http.get<any>(`${this.apiUrl}/search/users?q=${query}`);
+  // }
   // searchQuery: string = '';
   // users: any[] = [];
 

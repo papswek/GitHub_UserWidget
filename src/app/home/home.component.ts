@@ -13,5 +13,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.userService.getUsers();
+    // this.users = Object.values(data);
+  }
+
+  search(query: string) {
+    this.users = this.userService.searchUser(query);
   }
 }
