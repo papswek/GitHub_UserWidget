@@ -4,12 +4,12 @@
     <p>Search git user and hit enter.</p>
     <input type="text" (keyup.enter)="search($event.target.value)" />
   </div>
-  <div *ngIf="user">
-    <img [src]="user.avatar_url" alt="Avatar" />
-    <div>Name: {{ user.name }}</div>
-    <div>Login Name: {{ user.login }}</div>
-    <div>Company: {{ user.company }}</div>
-    <div>Followers: {{ user.followers }}</div>
-    <div>Public Repos: {{ user.public_repos }}</div>
+  <div *ngIf="users">
+    <img [src]="users.avatar_url" alt="Avatar" />
+    <div *ngFor="let user of users">Name: {{ users.username }}</div>
+    <div>Login Name: {{ users.login }}</div>
+    <div>Company: {{ users.company }}</div>
+    <div>Followers: {{ users.followers }}</div>
+    <div>Public Repos: {{ users.public_repos }}</div>
   </div>
 </div>
