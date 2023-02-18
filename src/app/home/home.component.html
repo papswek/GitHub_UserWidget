@@ -4,4 +4,9 @@
     <p>Search git user and hit enter.</p>
     <input type="text" />
   </div>
+  <div *ngIf="users">
+    <div *ngFor="let user of users">
+      {{ user.login }}
+    </div>
+  </div>
 </div>
