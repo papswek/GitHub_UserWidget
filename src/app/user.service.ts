@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
 @Injectable()
 export class UserService {
   private apiUrl = 'https://api.github.com/users';
@@ -10,7 +9,7 @@ export class UserService {
 
   /* Get all users */
   getUsers() {
-    return this.http.get(`${this.apiUrl}?per_page=10`);
+    return this.http.get(`${this.apiUrl}`);
   }
   getUser(username: string) {
     return this.http.get(`${this.apiUrl}/${username}`);
