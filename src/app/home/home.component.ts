@@ -14,13 +14,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
-      console.table(this.users);
+      // console.table(this.users);
     });
 
     // this.users = Object.values(data);
   }
 
-  search(query: string) {
+  searchUsers(query: string) {
     this.users = this.userService.searchUser(query);
   }
 }

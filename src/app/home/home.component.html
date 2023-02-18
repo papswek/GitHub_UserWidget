@@ -2,14 +2,9 @@
   <header class="header">GitHub User Profile Viewer</header>
   <div class="search">
     <p>Search git user and hit enter.</p>
-    <input type="text" (keyup.enter)="search($event.target.value)" />
+    <input type="text" (keyup.enter)="searchUsers($event.target.value)" />
   </div>
-  <!-- <div *ngIf="users">
-    <img *ngFor="let user of users" [src]="user.avatar_url" alt="Avatar" />
-    <div>Name: {{ user.username }}</div>
-    <div *ngFor="let user of users">Login Name: {{ user.login }}</div>
-    <div>Company: {{ users.company }}</div>
-    <div>Followers: {{ users.followers }}</div>
-    <div>Public Repos: {{ users.public_repos }}</div>
-  </div> -->
+  <div *ngIf="searchUsers">
+    <div>{{ users.login }}</div>
+  </div>
 </div>

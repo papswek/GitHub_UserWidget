@@ -18,8 +18,8 @@ export class UserService {
     return this.http.get(`${this.apiUrl}/${username}`);
   }
 
-  searchUser(query: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/search/users?q=${query}`);
+  searchUser(query: string) {
+    return this.http.get(`${this.apiUsersUrl}/search/users?q=${query}`);
   }
 
   // searchUser(query: string): Observable<any> {
