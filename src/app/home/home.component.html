@@ -1,5 +1,5 @@
 <div class="body">
-  <header class="header">GitHub User Profile Viewer</header>
+  <header class="header">Git User Profile Viewer</header>
   <div class="search">
     <p>Search git user and hit enter.</p>
     <input
@@ -13,7 +13,7 @@
     <div class="card" *ngFor="let user of searchedUsers">
       <img [src]="user.avatar_url" alt="User Avatar" />
       <p class="username">{{ user.name }}</p>
-      <p>{{ user.login }}</p>
+      <p>({{ user.login }})</p>
       <p>{{ user.company }}</p>
       <p>Followers: {{ user.followers }}</p>
       <p>Public Repos: {{ user.public_repos }}</p>
