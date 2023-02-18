@@ -9,15 +9,15 @@
     />
   </div>
 
-  <div class="card">
-    <div *ngFor="let user of searchedUsers">
-      <button class="remove-btn" (click)="removeUser(user)">x</button>
+  <div class="cards-container">
+    <div class="card" *ngFor="let user of searchedUsers">
       <img [src]="user.avatar_url" alt="User Avatar" />
-      <h3>{{ user.name }}</h3>
+      <p class="username">{{ user.name }}</p>
       <p>{{ user.login }}</p>
       <p>{{ user.company }}</p>
       <p>Followers: {{ user.followers }}</p>
       <p>Public Repos: {{ user.public_repos }}</p>
+      <p class="remove-btn" (click)="removeUser(user)">remove</p>
     </div>
   </div>
 </div>
