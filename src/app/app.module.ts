@@ -8,10 +8,6 @@ import { MarkdownModule } from 'ngx-md';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './tutorial/header.component';
-import { FooterComponent } from './tutorial/footer.component';
-
-import { UserComponent } from './example/user.component'; // Add an import to the component pointing to the place where it was created
 
 import { HomeComponent } from './home/home.component';
 import { UserService } from './user.service';
@@ -26,10 +22,7 @@ import { UserService } from './user.service';
   ],
   declarations: [
     HomeComponent,
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    UserComponent, // Add the components name to the module declarations
+    AppComponent, // Add the components name to the module declarations
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
