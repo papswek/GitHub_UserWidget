@@ -7,7 +7,7 @@ export class UserService {
 
   private httpOptions = {
     headers: new HttpHeaders({
-      Authorization: 'token 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',
+      Authorization: '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',
     }),
   };
 
