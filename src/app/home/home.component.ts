@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
 export class HomeComponent implements OnInit {
   users;
   searchedUsers: any[] = [];
-
+  searchText: string = '';
   constructor(private userService: UserService) {}
 
   ngOnInit() {
@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
             'searchedUsersData',
             JSON.stringify(this.searchedUsers)
           );
+          this.searchText = '';
         },
         (error) => {
           alert('User not found');

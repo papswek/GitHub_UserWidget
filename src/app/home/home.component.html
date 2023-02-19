@@ -3,6 +3,7 @@
   <div class="search">
     <p>Search git user and hit enter.</p>
     <input
+      [(ngModel)]="searchText"
       type="text"
       placeholder="username"
       (keyup.enter)="searchUser($event.target.value)"
